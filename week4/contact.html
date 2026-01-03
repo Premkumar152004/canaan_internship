@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SEO Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Canaan Ed & Tech for internship inquiries, training programs, or career guidance. Get in touch with our team today.">
+    <meta name="keywords" content="contact canaan ed tech, internship inquiry, training enrollment, career guidance contact">
+    <meta name="author" content="Canaan Ed & Tech">
+    <meta name="robots" content="index, follow">
+    
+    <title>Contact Us - Canaan Ed & Tech | Get in Touch</title>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">Canaan Ed & Tech</a>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Get in Touch</h1>
+            <p>We'd love to hear from you. Let's start your journey together!</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <p>Fill out the form and our team will get back to you within 24 hours.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-text">
+                                <h3>Email</h3>
+                                <p>info@canaanedtech.com</p>
+                                <p>support@canaanedtech.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-text">
+                                <h3>Phone</h3>
+                                <p>+91 XXXX-XXXXXX</p>
+                                <p>Mon-Sat: 9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-text">
+                                <h3>Address</h3>
+                                <p>123 Tech Street</p>
+                                <p>Your City, State - 000000</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">🌐</div>
+                            <div class="contact-text">
+                                <h3>Follow Us</h3>
+                                <p>LinkedIn | Twitter | Instagram</p>
+                                <p>Facebook | YouTube</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2>Send Us a Message</h2>
+                    
+                    <!-- Success Message -->
+                    <div class="success-message" id="success-message">
+                        ✓ Thank you! Your message has been sent successfully. We'll get back to you soon.
+                    </div>
+                    
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                                <span class="error-message" id="firstName-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                                <span class="error-message" id="lastName-error"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                                <span class="error-message" id="email-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                                <span class="error-message" id="phone-error"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">-- Select Subject --</option>
+                                <option value="internship">Internship Inquiry</option>
+                                <option value="training">Training Program</option>
+                                <option value="career">Career Guidance</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="error-message" id="subject-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="domain">Interested Domain</label>
+                            <select id="domain" name="domain">
+                                <option value="">-- Select Domain (Optional) --</option>
+                                <option value="web">Web Development</option>
+                                <option value="mobile">Mobile App Development</option>
+                                <option value="data">Data Science & AI</option>
+                                <option value="uiux">UI/UX Design</option>
+                                <option value="marketing">Digital Marketing</option>
+                                <option value="cloud">Cloud Computing</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                            <div class="char-counter">
+                                <span id="char-count">0</span>/500 characters
+                            </div>
+                            <span class="error-message" id="message-error"></span>
+                        </div>
+                        
+                        <div class="form-buttons">
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                            <button type="reset" class="btn btn-secondary">Clear Form</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How do I apply for an internship?</h3>
+                    <p>Fill out the contact form above selecting "Internship Inquiry" as the subject, or send us an email directly at info@canaanedtech.com with your details and resume.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What is the duration of training programs?</h3>
+                    <p>Training programs vary from 2-7 months depending on the domain. Each program is designed to provide comprehensive knowledge and hands-on experience.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do you provide certificates?</h3>
+                    <p>Yes! All participants receive completion certificates. Top performers also receive letters of recommendation that can boost your job applications.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Are Level 2 internships guaranteed?</h3>
+                    <p>Level 2 internships are merit-based. Students who perform exceptionally well in Level 1 internships are eligible to advance to paid Level 2 positions.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What are the prerequisites?</h3>
+                    <p>Basic computer knowledge and enthusiasm to learn are the main requirements. Some advanced programs may require prior programming knowledge.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do you offer job placement?</h3>
+                    <p>Yes! We provide job placement assistance, resume building, interview preparation, and connect you with our partner companies for opportunities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Canaan Ed & Tech</h3>
+                    <p>Empowering future innovators through education and technology.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📧 info@canaanedtech.com</p>
+                    <p>📱 +91 XXXX-XXXXXX</p>
+                    <p>📍 Your City, State, India</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Canaan Ed & Tech. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scroll-top">↑</button>
+
+    <!-- External JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
