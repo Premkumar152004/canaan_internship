@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Canaan Ed & Tech</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .about-section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .about-section h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .about-section p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .service-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .service-card h3 {
+            color: #764ba2;
+            margin-bottom: 0.8rem;
+        }
+
+        .service-card ul {
+            list-style-position: inside;
+            color: #555;
+        }
+
+        .service-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info {
+            margin-top: 1rem;
+        }
+
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Canaan Ed & Tech</h1>
+        <p>Empowering Future Innovators Through Education & Technology</p>
+    </header>
+
+    <div class="container">
+        <section class="about-section">
+            <h2>About Canaan Ed & Tech</h2>
+            <p>
+                Canaan Ed & Tech is a forward-thinking organization dedicated to bridging the gap between 
+                academic knowledge and industry requirements. We specialize in providing comprehensive training, 
+                internship opportunities, and career guidance to students and young professionals looking to 
+                excel in the technology sector.
+            </p>
+            <p>
+                Our mission is to nurture talent, foster innovation, and create pathways for aspiring 
+                professionals to achieve their career goals. Through hands-on learning experiences and 
+                industry-relevant projects, we prepare individuals for the challenges of the modern workplace.
+            </p>
+        </section>
+
+        <section class="about-section">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🎓 Professional Training</h3>
+                    <ul>
+                        <li>Web Development</li>
+                        <li>Mobile App Development</li>
+                        <li>Data Science & AI</li>
+                        <li>Digital Marketing</li>
+                        <li>UI/UX Design</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>💼 Internship Programs</h3>
+                    <ul>
+                        <li>Level 1: Skill Building</li>
+                        <li>Level 2: Paid Internships</li>
+                        <li>Real-world Projects</li>
+                        <li>Mentorship Support</li>
+                        <li>Completion Certificates</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>🚀 Career Guidance</h3>
+                    <ul>
+                        <li>Resume Building</li>
+                        <li>Interview Preparation</li>
+                        <li>Portfolio Development</li>
+                        <li>Industry Connections</li>
+                        <li>Job Placement Support</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h2>Why Choose Us?</h2>
+            <p>
+                <strong>Industry-Relevant Curriculum:</strong> Our programs are designed in consultation with 
+                industry experts to ensure you learn the most current and in-demand skills.
+            </p>
+            <p>
+                <strong>Hands-On Experience:</strong> We believe in learning by doing. Every program includes 
+                practical projects that mirror real-world scenarios.
+            </p>
+            <p>
+                <strong>Supportive Community:</strong> Join a network of learners, mentors, and industry 
+                professionals who are committed to your success.
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Canaan Ed & Tech. All Rights Reserved.</p>
+        <div class="contact-info">
+            <p>Contact us: <a href="mailto:info@canaanedtech.com">info@canaanedtech.com</a></p>
+        </div>
+    </footer>
+</body>
+</html>
