@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canaan Ed & Tech - Internship Inquiry</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 600px;
+            width: 100%;
+            padding: 2.5rem;
+        }
+
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            font-family: inherit;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .error {
+            color: #e74c3c;
+            font-size: 0.875rem;
+            margin-top: 0.3rem;
+            display: none;
+        }
+
+        .error.show {
+            display: block;
+        }
+
+        input.invalid, select.invalid, textarea.invalid {
+            border-color: #e74c3c;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        button {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-reset {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .btn-reset:hover {
+            background: #e0e0e0;
+        }
+
+        .info-button {
+            background: #764ba2;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            width: 100%;
+            transition: background 0.3s ease;
+        }
+
+        .info-button:hover {
+            background: #5c3980;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            animation: slideDown 0.3s ease;
+        }
+
+        .modal-header {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        .success-message {
+            display: none;
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            animation: slideDown 0.3s ease;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        /* Character Counter */
+        .char-counter {
+            text-align: right;
+            font-size: 0.875rem;
+            color: #666;
+            margin-top: 0.3rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+
+            .container {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Internship Inquiry Form</h1>
+        <p class="subtitle">Join Canaan Ed & Tech's Web Development Program</p>
+
+        <button class="info-button" onclick="showModal()">ℹ️ About This Internship</button>
+
+        <div id="successMessage" class="success-message">
+            ✓ Your inquiry has been submitted successfully! We'll get back to you soon.
+        </div>
+
+        <form id="internshipForm">
+            <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+                <div class="error" id="nameError">Please enter your full name (minimum 3 characters)</div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="example@email.com">
+                <div class="error" id="emailError">Please enter a valid email address</div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX-XXXXX">
+                <div class="error" id="phoneError">Please enter a valid 10-digit phone number</div>
+            </div>
+
+            <div class="form-group">
+                <label for="domain">Preferred Internship Domain *</label>
+                <select id="domain" name="domain">
+                    <option value="">-- Select Domain --</option>
+                    <option value="web">Web Development</option>
+                    <option value="app">Mobile App Development</option>
+                    <option value="data">Data Science</option>
+                    <option value="marketing">Digital Marketing</option>
+                    <option value="design">UI/UX Design</option>
+                </select>
+                <div class="error" id="domainError">Please select an internship domain</div>
+            </div>
+
+            <div class="form-group">
+                <label for="experience">Current Experience Level *</label>
+                <select id="experience" name="experience">
+                    <option value="">-- Select Experience --</option>
+                    <option value="beginner">Beginner (No Experience)</option>
+                    <option value="intermediate">Intermediate (Some Projects)</option>
+                    <option value="advanced">Advanced (Professional Experience)</option>
+                </select>
+                <div class="error" id="experienceError">Please select your experience level</div>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Why do you want to join this internship? *</label>
+                <textarea id="message" name="message" placeholder="Tell us about your goals and motivation..." maxlength="500"></textarea>
+                <div class="char-counter"><span id="charCount">0</span>/500 characters</div>
+                <div class="error" id="messageError">Please write at least 20 characters</div>
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="btn-submit">Submit Application</button>
+                <button type="reset" class="btn-reset">Clear Form</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Modal -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 class="modal-header">About This Internship</h2>
+            <p><strong>Duration:</strong> 1 Month (4 Weeks)</p>
+            <p><strong>Type:</strong> Level 1 (Unpaid, Experience-based)</p>
+            <p><strong>Benefits:</strong></p>
+            <ul>
+                <li>✓ Completion Certificate</li>
+                <li>✓ Letter of Recommendation (Top Performers)</li>
+                <li>✓ Eligibility for Level 2 Paid Internship</li>
+                <li>✓ Real-world Project Experience</li>
+                <li>✓ Mentorship from Industry Experts</li>
+            </ul>
+            <p style="margin-top: 1rem;"><strong>Requirements:</strong> Basic understanding of HTML, CSS, and willingness to learn JavaScript.</p>
+        </div>
+    </div>
+
+    <script>
+        // Form elements
+        const form = document.getElementById('internshipForm');
+        const fullName = document.getElementById('fullName');
+        const email = document.getElementById('email');
+        const phone = document.getElementById('phone');
+        const domain = document.getElementById('domain');
+        const experience = document.getElementById('experience');
+        const message = document.getElementById('message');
+        const successMessage = document.getElementById('successMessage');
+        const charCount = document.getElementById('charCount');
+
+        // Character counter for textarea
+        message.addEventListener('input', function() {
+            const count = this.value.length;
+            charCount.textContent = count;
+            
+            if (count > 450) {
+                charCount.style.color = '#e74c3c';
+            } else {
+                charCount.style.color = '#666';
+            }
+        });
+
+        // Validation functions
+        function validateName() {
+            const nameValue = fullName.value.trim();
+            const nameError = document.getElementById('nameError');
+            
+            if (nameValue.length < 3) {
+                fullName.classList.add('invalid');
+                nameError.classList.add('show');
+                return false;
+            } else {
+                fullName.classList.remove('invalid');
+                nameError.classList.remove('show');
+                return true;
+            }
+        }
+
+        function validateEmail() {
+            const emailValue = email.value.trim();
+            const emailError = document.getElementById('emailError');
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (!emailPattern.test(emailValue)) {
+                email.classList.add('invalid');
+                emailError.classList.add('show');
+                return false;
+            } else {
+                email.classList.remove('invalid');
+                emailError.classList.remove('show');
+                return true;
+            }
+        }
+
+        function validatePhone() {
+            const phoneValue = phone.value.trim();
+            const phoneError = document.getElementById('phoneError');
+            const phonePattern = /^[0-9]{10}$/;
+            const cleanPhone = phoneValue.replace(/\D/g, '');
+            
+            if (!phonePattern.test(cleanPhone)) {
+                phone.classList.add('invalid');
+                phoneError.classList.add('show');
+                return false;
+            } else {
+                phone.classList.remove('invalid');
+                phoneError.classList.remove('show');
+                return true;
+            }
+        }
+
+        function validateDomain() {
+            const domainError = document.getElementById('domainError');
+            
+            if (domain.value === '') {
+                domain.classList.add('invalid');
+                domainError.classList.add('show');
+                return false;
+            } else {
+                domain.classList.remove('invalid');
+                domainError.classList.remove('show');
+                return true;
+            }
+        }
+
+        function validateExperience() {
+            const experienceError = document.getElementById('experienceError');
+            
+            if (experience.value === '') {
+                experience.classList.add('invalid');
+                experienceError.classList.add('show');
+                return false;
+            } else {
+                experience.classList.remove('invalid');
+                experienceError.classList.remove('show');
+                return true;
+            }
+        }
+
+        function validateMessage() {
+            const messageValue = message.value.trim();
+            const messageError = document.getElementById('messageError');
+            
+            if (messageValue.length < 20) {
+                message.classList.add('invalid');
+                messageError.classList.add('show');
+                return false;
+            } else {
+                message.classList.remove('invalid');
+                messageError.classList.remove('show');
+                return true;
+            }
+        }
+
+        // Real-time validation
+        fullName.addEventListener('blur', validateName);
+        email.addEventListener('blur', validateEmail);
+        phone.addEventListener('blur', validatePhone);
+        domain.addEventListener('change', validateDomain);
+        experience.addEventListener('change', validateExperience);
+        message.addEventListener('blur', validateMessage);
+
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate all fields
+            const isNameValid = validateName();
+            const isEmailValid = validateEmail();
+            const isPhoneValid = validatePhone();
+            const isDomainValid = validateDomain();
+            const isExperienceValid = validateExperience();
+            const isMessageValid = validateMessage();
+            
+            // Check if all validations passed
+            if (isNameValid && isEmailValid && isPhoneValid && isDomainValid && isExperienceValid && isMessageValid) {
+                // Show success message
+                successMessage.classList.add('show');
+                
+                // Log form data (in real scenario, this would be sent to a server)
+                console.log('Form Data Submitted:');
+                console.log('Name:', fullName.value);
+                console.log('Email:', email.value);
+                console.log('Phone:', phone.value);
+                console.log('Domain:', domain.value);
+                console.log('Experience:', experience.value);
+                console.log('Message:', message.value);
+                
+                // Reset form after 2 seconds
+                setTimeout(() => {
+                    form.reset();
+                    charCount.textContent = '0';
+                    successMessage.classList.remove('show');
+                }, 3000);
+            } else {
+                // Scroll to first error
+                const firstError = document.querySelector('.invalid');
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        });
+
+        // Reset button functionality
+        form.addEventListener('reset', function() {
+            // Remove all error states
+            document.querySelectorAll('.invalid').forEach(el => el.classList.remove('invalid'));
+            document.querySelectorAll('.error.show').forEach(el => el.classList.remove('show'));
+            successMessage.classList.remove('show');
+            charCount.textContent = '0';
+        });
+
+        // Modal functions
+        function showModal() {
+            document.getElementById('infoModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('infoModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('infoModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
